@@ -64,8 +64,8 @@ class CustomView @JvmOverloads constructor(
         setMeasuredDimension(width, height)
 
         rectF.set(
-            0f + strokeWidth / 2,
-            0f + strokeWidth / 2,
+            strokeWidth / 2,
+            strokeWidth / 2,
             width.toFloat() - strokeWidth / 2,
             height.toFloat() - strokeWidth / 2
         )
@@ -75,5 +75,6 @@ class CustomView @JvmOverloads constructor(
         super.onDraw(canvas)
         path.addRoundRect(rectF, cornerRadius, cornerRadius, Path.Direction.CW)
         canvas?.drawPath(path, paint)
+        path.reset()
     }
 }
